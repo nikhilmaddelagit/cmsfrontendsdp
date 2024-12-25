@@ -99,7 +99,7 @@ export default function DeleteCerti()
   return (
     <div>
       <SideBar />
-      <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>View All Certificates</h3>
+      <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>Delete Certificates</h3>
       {loading ? (
         <Spin tip="Loading certificates..." style={{ display: 'block', margin: '0 auto' }} />
       ) : (

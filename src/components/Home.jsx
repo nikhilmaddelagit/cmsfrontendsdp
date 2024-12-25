@@ -201,7 +201,7 @@ const Home = () => {
             Have questions? Reach out to us, and we'll be happy to help.
           </p>
           <a
-            href="mailto:support@gmail.com"
+            href="mailto:support@certification.com"
             style={{
               backgroundColor: '#fff',
               color: '#1cc88a',
