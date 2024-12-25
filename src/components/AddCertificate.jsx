@@ -54,7 +54,7 @@ export default function AddCertificate() {
       data.append("file", formData.file);
       data.append("data", new Blob([JSON.stringify(certificateData)], { type: "application/json" }));
 
-      const response = await axios.post(`https://cmsbackendsdp-production.up.railway.app`, data);
+      const response = await axios.post(`https://cmsbackendsdp-production.up.railway.app/`, data);
 
 
       setFormData({

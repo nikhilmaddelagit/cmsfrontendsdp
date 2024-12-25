@@ -22,7 +22,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://cmsbackendsdp-production.up.railway.app', formData);
+            const response = await axios.post('https://cmsbackendsdp-production.up.railway.app/', formData);
 
             if (response.data) {
                 message.success("Login Success");
