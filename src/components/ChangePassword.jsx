@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import SideBar from './SideBar';
 
 export default function ChangePassword() 
 {
@@ -40,6 +41,7 @@ export default function ChangePassword()
 
   return (
     <div>
+      <SideBar/>
       <h1>Change Password</h1><br></br>
 
       <form onSubmit={handleSubmit}>

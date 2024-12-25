@@ -256,6 +256,7 @@ export default function AdminNavbar() {
                       fontSize: "14px",
                     }}
                   >
+                    
                     View All Certificates
                   </a>
                 </li>

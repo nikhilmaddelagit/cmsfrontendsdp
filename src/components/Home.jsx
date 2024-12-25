@@ -1,149 +1,239 @@
 import React from 'react';
 import Navbar from './NavBar.jsx';
 
-const LandingPage = () => {
+const Home = () => {
   return (
     <>
-          <Navbar/>
+      <Navbar />
 
-  
-    <div style={{ fontFamily: 'Poppins, sans-serif', margin: 0, padding: 0, boxSizing: 'border-box', backgroundColor: '#f5f5f5', color: '#333' }}>
-
-
-      <section
+      <div
         style={{
-          background: 'linear-gradient(to right, #4e73df, #1cc88a)',
-          color: '#fff',
-          padding: '150px 100px',
-          textAlign: 'center',
-          position: 'relative',
+          fontFamily: 'Poppins, sans-serif',
+          margin: 0,
+          padding: 0,
+          boxSizing: 'border-box',
+          backgroundColor: '#f5f5f5',
+          color: '#333',
         }}
       >
-        <div style={{ zIndex: 1 }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: '700', marginBottom: '20px' }}>
-            Certification Management System
-          </h1>
-          <p style={{ fontSize: '1.2rem', marginBottom: '30px', fontWeight: '300' }}>
-            Streamline your professional certifications, track expiration dates, and manage renewals all in one place.
+        {/* Hero Section */}
+        <section
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+            background: 'linear-gradient(to right, #4e73df, #1cc88a)',
+            color: '#fff',
+            textAlign: 'center',
+            padding: '0 50px',
+          }}
+        >
+          <div>
+            <h1 style={{ fontSize: '3rem', fontWeight: '700', marginBottom: '20px' }}>
+              Certification Management Made Easy
+            </h1>
+            <p style={{ fontSize: '1.2rem', fontWeight: '300', marginBottom: '40px' }}>
+              Manage and track your certifications effortlessly with our intuitive platform.
+            </p>
+            <a
+              href="#features"
+              style={{
+                backgroundColor: '#fff',
+                color: '#1cc88a',
+                padding: '15px 30px',
+                fontSize: '1.1rem',
+                fontWeight: '500',
+                textDecoration: 'none',
+                borderRadius: '25px',
+                transition: 'background-color 0.3s',
+              }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#1cc88a')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#fff')}
+            >
+              Explore Features
+            </a>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section
+          id="features"
+          style={{
+            padding: '80px 0',
+            backgroundColor: '#fff',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>Our Features</h2>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '30px',
+              flexWrap: 'wrap',
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: '#f9f9f9',
+                padding: '40px 30px',
+                width: '300px',
+                borderRadius: '10px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+            >
+              <i
+                className="fas fa-certificate"
+                style={{ fontSize: '3rem', color: '#1cc88a', marginBottom: '20px' }}
+              ></i>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Track Certifications</h3>
+              <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
+                Keep all your certification details organized and stay on top of expiration dates.
+              </p>
+            </div>
+            <div
+              style={{
+                backgroundColor: '#f9f9f9',
+                padding: '40px 30px',
+                width: '300px',
+                borderRadius: '10px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+            >
+              <i
+                className="fas fa-calendar-check"
+                style={{ fontSize: '3rem', color: '#4e73df', marginBottom: '20px' }}
+              ></i>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Expiration Alerts</h3>
+              <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
+                Receive notifications when your certifications are about to expire, so you never miss a deadline.
+              </p>
+            </div>
+            <div
+              style={{
+                backgroundColor: '#f9f9f9',
+                padding: '40px 30px',
+                width: '300px',
+                borderRadius: '10px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+            >
+              <i
+                className="fas fa-cloud-upload-alt"
+                style={{ fontSize: '3rem', color: '#ff6f61', marginBottom: '20px' }}
+              ></i>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Cloud Storage</h3>
+              <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
+                Safely store your certificates in the cloud and access them from anywhere, anytime.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section
+          style={{
+            padding: '80px 0',
+            backgroundColor: '#f5f5f5',
+            textAlign: 'center',
+          }}
+        >
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>How It Works</h2>
+          <p style={{ fontSize: '1.2rem', fontWeight: '300', marginBottom: '40px' }}>
+            Getting started is easy! Simply create an account, add your certifications, and let our platform handle the rest.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '50px',
+              flexWrap: 'wrap',
+            }}
+          >
+            <div style={{ width: '250px' }}>
+              <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>1. Sign Up</h3>
+              <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
+                Register for a free account to start managing your certifications.
+              </p>
+            </div>
+            <div style={{ width: '250px' }}>
+              <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>2. Add Certifications</h3>
+              <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
+                Easily upload and organize all your certification information.
+              </p>
+            </div>
+            <div style={{ width: '250px' }}>
+              <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>3. Get Alerts</h3>
+              <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
+                Receive timely alerts about upcoming expiration dates.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section
+          style={{
+            padding: '80px 0',
+            backgroundColor: '#1cc88a',
+            color: '#fff',
+            textAlign: 'center',
+          }}
+        >
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>Get in Touch</h2>
+          <p style={{ fontSize: '1.2rem', fontWeight: '300', marginBottom: '40px' }}>
+            Have questions? Reach out to us, and we'll be happy to help.
           </p>
           <a
-            href="/registration"
+            href="mailto:support@gmail.com"
             style={{
-              backgroundColor: '#ff6f61',
-              color: '#fff',
-              padding: '12px 30px',
+              backgroundColor: '#fff',
+              color: '#1cc88a',
+              padding: '15px 30px',
               fontSize: '1.1rem',
-              fontWeight: '600',
-              borderRadius: '5px',
+              fontWeight: '500',
               textDecoration: 'none',
-              transition: 'all 0.3s ease',
+              borderRadius: '25px',
+              transition: 'background-color 0.3s',
             }}
-            onMouseEnter={(e) => (e.target.style.backgroundColor = '#e05a50')}
-            onMouseLeave={(e) => (e.target.style.backgroundColor = '#ff6f61')}
+            onMouseEnter={(e) => (e.target.style.backgroundColor = '#1cc88a')}
+            onMouseLeave={(e) => (e.target.style.backgroundColor = '#fff')}
           >
-            Get Started
+            Contact Us
           </a>
-        </div>
-      </section>
+        </section>
 
-      <section style={{ padding: '50px 0', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Features</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-          <div
-            style={{
-              backgroundColor: '#fff',
-              padding: '20px',
-              borderRadius: '10px',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              width: '300px',
-            }}
-          >
-            <i
-              className="fas fa-certificate"
-              style={{ fontSize: '3rem', color: '#1cc88a', marginBottom: '15px' }}
-            ></i>
-            <h3 style={{ marginBottom: '15px' }}>Track Certifications</h3>
-            <p>Easily record and manage all your certifications with expiration date tracking.</p>
-          </div>
-          <div
-            style={{
-              backgroundColor: '#fff',
-              padding: '20px',
-              borderRadius: '10px',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              width: '300px',
-            }}
-          >
-            <i
-              className="fas fa-calendar-check"
-              style={{ fontSize: '3rem', color: '#ff6f61', marginBottom: '15px' }}
-            ></i>
-            <h3 style={{ marginBottom: '15px' }}>View Certificates</h3>
-            <p>View your certificates any time any where easily</p>
-          </div>
-          <div
-            style={{
-              backgroundColor: '#fff',
-              padding: '20px',
-              borderRadius: '10px',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              width: '300px',
-            }}
-          >
-            <i
-              className="fas fa-cloud-upload-alt"
-              style={{ fontSize: '3rem', color: '#4e73df', marginBottom: '15px' }}
-            ></i>
-            <h3 style={{ marginBottom: '15px' }}>Secure Cloud Storage</h3>
-            <p>Store and access your certificates securely anytime, anywhere.</p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        style={{
-          backgroundColor: '#1cc88a',
-          color: '#fff',
-          padding: '60px 0',
-          textAlign: 'center',
-        }}
-      >
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>
-          Ready to take control of your certifications?
-        </h2>
-        <a
-          href="/registration"
+        {/* Footer */}
+        <footer
           style={{
-            backgroundColor: '#ff6f61',
+            backgroundColor: '#333',
             color: '#fff',
-            padding: '12px 30px',
-            fontSize: '1.2rem',
-            fontWeight: '600',
-            borderRadius: '5px',
-            textDecoration: 'none',
-            transition: 'all 0.3s ease',
+            textAlign: 'center',
+            padding: '20px 0',
+            marginTop: 'auto',
           }}
-          onMouseEnter={(e) => (e.target.style.backgroundColor = '#e05a50')}
-          onMouseLeave={(e) => (e.target.style.backgroundColor = '#ff6f61')}
         >
-          Join Now
-        </a>
-      </section>
-
-      <footer
-        style={{
-          backgroundColor: '#333',
-          color: '#fff',
-          textAlign: 'center',
-          padding: '20px 0',
-          marginTop: 'auto',
-        }}
-      >
-        <p>&copy; 2024 Certification Management System. All rights reserved.</p>
-      </footer>
-    </div>
+          <p>&copy; 2024 Certification Management System. All rights reserved.</p>
+        </footer>
+      </div>
     </>
   );
 };
 
-export default LandingPage;
+export default Home;
