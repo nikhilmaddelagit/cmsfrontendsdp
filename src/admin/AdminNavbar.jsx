@@ -219,7 +219,7 @@ export default function AdminNavbar() {
               >
                 <li>
                   <Link
-                    to="/admin/adminviewcerti"
+                    to="/adminviewcerti"
                     style={{
                       display: "block",
                       padding: "10px 20px",
