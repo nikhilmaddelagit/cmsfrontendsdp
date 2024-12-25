@@ -1,7 +1,5 @@
 import React from 'react';
 import Navbar from './NavBar.jsx';
-import { motion } from 'framer-motion'; // Import framer-motion for animations
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Import FontAwesome CSS
 
 const Home = () => {
   return (
@@ -19,7 +17,7 @@ const Home = () => {
         }}
       >
         {/* Hero Section */}
-        <motion.section
+        <section
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -30,9 +28,6 @@ const Home = () => {
             textAlign: 'center',
             padding: '0 50px',
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
         >
           <div>
             <h1 style={{ fontSize: '3rem', fontWeight: '700', marginBottom: '20px' }}>
@@ -59,10 +54,10 @@ const Home = () => {
               Explore Features
             </a>
           </div>
-        </motion.section>
+        </section>
 
         {/* Features Section */}
-        <motion.section
+        <section
           id="features"
           style={{
             padding: '80px 0',
@@ -72,9 +67,6 @@ const Home = () => {
             flexDirection: 'column',
             alignItems: 'center',
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
         >
           <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>Our Features</h2>
           <div
@@ -85,7 +77,7 @@ const Home = () => {
               flexWrap: 'wrap',
             }}
           >
-            <motion.div
+            <div
               style={{
                 backgroundColor: '#f9f9f9',
                 padding: '40px 30px',
@@ -95,7 +87,8 @@ const Home = () => {
                 textAlign: 'center',
                 transition: 'transform 0.3s ease',
               }}
-              whileHover={{ scale: 1.05 }} // Hover animation
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
             >
               <i
                 className="fas fa-certificate"
@@ -105,8 +98,8 @@ const Home = () => {
               <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
                 Keep all your certification details organized and stay on top of expiration dates.
               </p>
-            </motion.div>
-            <motion.div
+            </div>
+            <div
               style={{
                 backgroundColor: '#f9f9f9',
                 padding: '40px 30px',
@@ -116,7 +109,8 @@ const Home = () => {
                 textAlign: 'center',
                 transition: 'transform 0.3s ease',
               }}
-              whileHover={{ scale: 1.05 }} // Hover animation
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
             >
               <i
                 className="fas fa-calendar-check"
@@ -126,8 +120,8 @@ const Home = () => {
               <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
                 Receive notifications when your certifications are about to expire, so you never miss a deadline.
               </p>
-            </motion.div>
-            <motion.div
+            </div>
+            <div
               style={{
                 backgroundColor: '#f9f9f9',
                 padding: '40px 30px',
@@ -137,7 +131,8 @@ const Home = () => {
                 textAlign: 'center',
                 transition: 'transform 0.3s ease',
               }}
-              whileHover={{ scale: 1.05 }} // Hover animation
+              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
+              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
             >
               <i
                 className="fas fa-cloud-upload-alt"
@@ -147,20 +142,17 @@ const Home = () => {
               <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
                 Safely store your certificates in the cloud and access them from anywhere, anytime.
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* How It Works Section */}
-        <motion.section
+        <section
           style={{
             padding: '80px 0',
             backgroundColor: '#f5f5f5',
             textAlign: 'center',
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
         >
           <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>How It Works</h2>
           <p style={{ fontSize: '1.2rem', fontWeight: '300', marginBottom: '40px' }}>
@@ -174,53 +166,35 @@ const Home = () => {
               flexWrap: 'wrap',
             }}
           >
-            <motion.div
-              style={{ width: '250px' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
+            <div style={{ width: '250px' }}>
               <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>1. Sign Up</h3>
               <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
                 Register for a free account to start managing your certifications.
               </p>
-            </motion.div>
-            <motion.div
-              style={{ width: '250px' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-            >
+            </div>
+            <div style={{ width: '250px' }}>
               <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>2. Add Certifications</h3>
               <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
                 Easily upload and organize all your certification information.
               </p>
-            </motion.div>
-            <motion.div
-              style={{ width: '250px' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-            >
+            </div>
+            <div style={{ width: '250px' }}>
               <h3 style={{ fontSize: '1.8rem', marginBottom: '15px' }}>3. Get Alerts</h3>
               <p style={{ fontSize: '1.1rem', fontWeight: '300' }}>
                 Receive timely alerts about upcoming expiration dates.
               </p>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* Contact Section */}
-        <motion.section
+        <section
           style={{
             padding: '80px 0',
             backgroundColor: '#1cc88a',
             color: '#fff',
             textAlign: 'center',
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
         >
           <h2 style={{ fontSize: '2.5rem', marginBottom: '30px' }}>Get in Touch</h2>
           <p style={{ fontSize: '1.2rem', fontWeight: '300', marginBottom: '40px' }}>
@@ -238,10 +212,11 @@ const Home = () => {
               borderRadius: '25px',
               transition: 'background-color 0.3s',
             }}
+            
           >
             Contact Us
           </a>
-        </motion.section>
+        </section>
 
         {/* Footer */}
         <footer
