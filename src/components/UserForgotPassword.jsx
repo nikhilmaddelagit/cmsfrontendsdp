@@ -6,10 +6,12 @@ export default function UserForgotPassword() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    try 
+    {
       const response = await axios.post("https://cmsbackendsdp-production.up.railway.app/", { email });
       alert(response.data);
-    } catch (error) {
+    } 
+    catch (error) {
       console.error("Error:", error);
       alert("An error occurred. Please try again."); 
     }
@@ -20,7 +22,8 @@ export default function UserForgotPassword() {
       <br />
       <br />
       <br />
-      <form onSubmit={handleSubmit}>
+      <h1>Under Development!!</h1>
+      {/* <form onSubmit={handleSubmit}>
         <label>Enter Your Registered Email</label>
         <input
           type="email"
@@ -31,7 +34,7 @@ export default function UserForgotPassword() {
           required
         />
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
     </div>
   );
 }
