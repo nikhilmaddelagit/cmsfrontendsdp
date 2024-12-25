@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faAward, faChartBar, faCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 export default function AdminNavbar() {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -10,7 +11,6 @@ export default function AdminNavbar() {
   const toggleUserMenu = () => {
     setIsUserMenuOpen(!isUserMenuOpen);
   };
-
 
   const toggleCertMenu = () => {
     setIsCertMenuOpen(!isCertMenuOpen);
@@ -31,7 +31,7 @@ export default function AdminNavbar() {
           flexDirection: "column",
           padding: "10px 0",
           fontFamily: 'Poppins, sans-serif',
-          transition: 'all 0.3s ease-in-out', // Smooth transition
+          transition: 'all 0.3s ease-in-out',
         }}
       >
         <div
@@ -53,8 +53,8 @@ export default function AdminNavbar() {
 
         <ul style={{ listStyleType: "none", padding: "0", margin: "0" }}>
           <li style={{ marginBottom: "10px" }}>
-            <a
-              href="/admindashboard"
+            <Link
+              to="/admindashboard"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -75,7 +75,7 @@ export default function AdminNavbar() {
             >
               <FontAwesomeIcon icon={faHome} style={{ marginRight: "10px", fontSize: "18px" }} />
               Dashboard
-            </a>
+            </Link>
           </li>
 
           <li
@@ -85,8 +85,8 @@ export default function AdminNavbar() {
             }}
             onClick={toggleUserMenu}
           >
-            <a
-              href="#"
+            <Link
+              to="#"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -108,7 +108,7 @@ export default function AdminNavbar() {
             >
               <FontAwesomeIcon icon={faUsers} style={{ marginRight: "10px", fontSize: "18px" }} />
               User Management
-            </a>
+            </Link>
 
             {isUserMenuOpen && (
               <ul
@@ -122,12 +122,11 @@ export default function AdminNavbar() {
                   left: "0",
                   width: "100%",
                   zIndex: "10",
-                  transition: 'all 0.3s ease-in-out', // Smooth transition for dropdown
                 }}
               >
                 <li>
-                  <a
-                    href="/admindeleteuser"
+                  <Link
+                    to="/admindeleteuser"
                     style={{
                       display: "block",
                       padding: "10px 20px",
@@ -137,11 +136,11 @@ export default function AdminNavbar() {
                     }}
                   >
                     Delete User
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/updateuser"
+                  <Link
+                    to="/updateuser"
                     style={{
                       display: "block",
                       padding: "10px 20px",
@@ -151,11 +150,11 @@ export default function AdminNavbar() {
                     }}
                   >
                     Update User
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/viewallusers"
+                  <Link
+                    to="/viewallusers"
                     style={{
                       display: "block",
                       padding: "10px 20px",
@@ -165,108 +164,15 @@ export default function AdminNavbar() {
                     }}
                   >
                     View All Users
-                  </a>
-                </li>
-              </ul>
-            )}
-          </li>
-
-          <li
-            style={{
-              marginBottom: "10px",
-              position: "relative",
-            }}
-            onClick={toggleCertMenu}
-          >
-            <a
-              href="#"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "10px 20px",
-                color: "#fff",
-                textDecoration: "none",
-                fontSize: "16px",
-                cursor: "pointer",
-                transition: 'all 0.3s ease-in-out',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#007bff";
-                e.currentTarget.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            >
-              <FontAwesomeIcon icon={faAward} style={{ marginRight: "10px", fontSize: "18px" }} />
-              Certification Management
-            </a>
-
-            {isCertMenuOpen && (
-              <ul
-                style={{
-                  listStyleType: "none",
-                  padding: "0",
-                  margin: "0",
-                  backgroundColor: "#23272b",
-                  position: "absolute",
-                  top: "100%",
-                  left: "0",
-                  width: "100%",
-                  zIndex: "10",
-                }}
-              >
-                {/* <li>
-                  <a
-                    href="/admindeltecerti"
-                    style={{
-                      display: "block",
-                      padding: "10px 20px",
-                      color: "#fff",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                    }}
-                  >
-                    Delete Certificate
-                  </a>
-                </li> */}
-                {/* <li>
-                  <a
-                    href="/updatecerti"
-                    style={{
-                      display: "block",
-                      padding: "10px 20px",
-                      color: "#fff",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                    }}
-                  >
-                    Update Certificate
-                  </a>
-                </li> */}
-                <li>
-                  <a
-                    href="/adminviewcerti"
-                    style={{
-                      display: "block",
-                      padding: "10px 20px",
-                      color: "#fff",
-                      textDecoration: "none",
-                      fontSize: "14px",
-                    }}
-                  >
-                    
-                    View All Certificates
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}
           </li>
 
           <li style={{ marginBottom: "10px" }}>
-            <a
-              href="/analytics"
+            <Link
+              to="/analytics"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -278,12 +184,12 @@ export default function AdminNavbar() {
             >
               <FontAwesomeIcon icon={faChartBar} style={{ marginRight: "10px", fontSize: "18px" }} />
               Analytics
-            </a>
+            </Link>
           </li>
 
           <li style={{ marginBottom: "10px" }}>
-            <a
-              href="/adminsettings"
+            <Link
+              to="/adminsettings"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -295,12 +201,12 @@ export default function AdminNavbar() {
             >
               <FontAwesomeIcon icon={faCog} style={{ marginRight: "10px", fontSize: "18px" }} />
               Settings
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="/"
+            <Link
+              to="/"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -312,7 +218,7 @@ export default function AdminNavbar() {
             >
               <FontAwesomeIcon icon={faSignOutAlt} style={{ marginRight: "10px", fontSize: "18px" }} />
               Logout
-            </a>
+            </Link>
           </li>
         </ul>
       </aside>

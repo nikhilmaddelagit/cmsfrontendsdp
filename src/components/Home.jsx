@@ -48,8 +48,7 @@ const Home = () => {
                 borderRadius: '25px',
                 transition: 'background-color 0.3s',
               }}
-              onMouseEnter={(e) => (e.target.style.backgroundColor = '#1cc88a')}
-              onMouseLeave={(e) => (e.target.style.backgroundColor = '#fff')}
+             
             >
               Explore Features
             </a>
