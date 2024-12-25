@@ -7,7 +7,7 @@ export default function UserForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://cmsbackendsdp-production.up.railway.app", { email });
+      const response = await axios.post("https://cmsbackendsdp-production.up.railway.app", { email });
       alert(response.data);
     } catch (error) {
       console.error("Error:", error);

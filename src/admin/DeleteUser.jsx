@@ -7,7 +7,7 @@ export default function ViewAllUsers() {
 
   useEffect(() => {
     axios
-      .get("http://cmsbackendsdp-production.up.railway.app")
+      .get("https://cmsbackendsdp-production.up.railway.app")
       .then((response) => {
         setUsers(response.data);
       })
@@ -19,7 +19,7 @@ export default function ViewAllUsers() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this User Permanently?")) {
       try {
-        await axios.delete(`http://cmsbackendsdp-production.up.railway.app`);
+        await axios.delete(`https://cmsbackendsdp-production.up.railway.app`);
         alert("User deleted successfully!");
         setUsers(users.filter((user) => user.id !== id));
       }

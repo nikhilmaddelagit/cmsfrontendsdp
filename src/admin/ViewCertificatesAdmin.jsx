@@ -11,7 +11,7 @@ export default function ViewCertificateAdmin() {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await axios.get(`http://cmsbackendsdp-production.up.railway.app`, {
+        const response = await axios.get(`https://cmsbackendsdp-production.up.railway.app`, {
           responseType: 'arraybuffer',
         });
         const base64 = btoa(

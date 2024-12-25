@@ -20,7 +20,7 @@ export default function ChangePassword()
     
         try {
             const response = await axios.post(
-                'http://cmsbackendsdp-production.up.railway.app' + params.toString(),
+                'https://cmsbackendsdp-production.up.railway.app' + params.toString(),
                 null, 
                 {
                     headers: {

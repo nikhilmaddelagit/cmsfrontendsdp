@@ -145,7 +145,7 @@ export default function Registration() {
         }
 
         try {
-            await axios.post('http://cmsbackendsdp-production.up.railway.app', data);
+            await axios.post('https://cmsbackendsdp-production.up.railway.app', data);
             message.success("User Registered Successfully");
         } catch (error) {
             message.error("Error in registration");

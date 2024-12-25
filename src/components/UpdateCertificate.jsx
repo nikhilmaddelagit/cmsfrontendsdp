@@ -24,7 +24,7 @@ export default function UpdateCertificate()
     e.preventDefault();
 
     try {
-      const response = await axios.put("http://cmsbackendsdp-production.up.railway.app", formData);
+      const response = await axios.put("https://cmsbackendsdp-production.up.railway.app", formData);
 
         setFormData({
           certificationName: "",
