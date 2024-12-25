@@ -71,9 +71,7 @@ function App()
         <Route path="*" element={<NotFound />} />
 
 
-        <footer style={{ textAlign: 'center', position: 'fixed', bottom: '0', width: '100%', backgroundColor: '#222', color: 'white', padding: '10px 0' }}>
-          <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
-        </footer>
+
 
       </Routes>
        
