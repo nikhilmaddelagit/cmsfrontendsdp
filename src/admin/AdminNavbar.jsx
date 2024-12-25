@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUsers, faAward, faChartBar, faCog } from '@fortawesome/free-solid-svg-icons';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faUsers, faAward, faChartBar, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function AdminNavbar() {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -30,8 +30,8 @@ export default function AdminNavbar() {
           display: "flex",
           flexDirection: "column",
           padding: "10px 0",
-          fontFamily: 'Poppins, sans-serif',
-          transition: 'all 0.3s ease-in-out',
+          fontFamily: "Poppins, sans-serif",
+          transition: "all 0.3s ease-in-out",
         }}
       >
         <div
@@ -62,7 +62,7 @@ export default function AdminNavbar() {
                 color: "#fff",
                 textDecoration: "none",
                 fontSize: "16px",
-                transition: 'all 0.3s ease-in-out',
+                transition: "all 0.3s ease-in-out",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#007bff";
@@ -95,7 +95,7 @@ export default function AdminNavbar() {
                 textDecoration: "none",
                 fontSize: "16px",
                 cursor: "pointer",
-                transition: 'all 0.3s ease-in-out',
+                transition: "all 0.3s ease-in-out",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#007bff";
@@ -122,6 +122,7 @@ export default function AdminNavbar() {
                   left: "0",
                   width: "100%",
                   zIndex: "10",
+                  transition: "all 0.3s ease-in-out",
                 }}
               >
                 <li>
@@ -164,6 +165,70 @@ export default function AdminNavbar() {
                     }}
                   >
                     View All Users
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
+          <li
+            style={{
+              marginBottom: "10px",
+              position: "relative",
+            }}
+            onClick={toggleCertMenu}
+          >
+            <Link
+              to="#"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "10px 20px",
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "16px",
+                cursor: "pointer",
+                transition: "all 0.3s ease-in-out",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#007bff";
+                e.currentTarget.style.transform = "scale(1.05)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              <FontAwesomeIcon icon={faAward} style={{ marginRight: "10px", fontSize: "18px" }} />
+              Certification Management
+            </Link>
+
+            {isCertMenuOpen && (
+              <ul
+                style={{
+                  listStyleType: "none",
+                  padding: "0",
+                  margin: "0",
+                  backgroundColor: "#23272b",
+                  position: "absolute",
+                  top: "100%",
+                  left: "0",
+                  width: "100%",
+                  zIndex: "10",
+                }}
+              >
+                <li>
+                  <Link
+                    to="/admin/adminviewcerti"
+                    style={{
+                      display: "block",
+                      padding: "10px 20px",
+                      color: "#fff",
+                      textDecoration: "none",
+                      fontSize: "14px",
+                    }}
+                  >
+                    View All Certificates
                   </Link>
                 </li>
               </ul>
