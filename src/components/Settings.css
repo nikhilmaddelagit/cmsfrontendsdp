@@ -1,0 +1,95 @@
+/* General Page Styling */
+.settings-page {
+    font-family: "Inter", sans-serif;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .settings-heading {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Card Container Styling */
+  .settings-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping if there are too many cards */
+    gap: 20px; /* Spacing between cards */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: flex-start; /* Align the cards at the top */
+  }
+  
+  /* Individual Card Styling */
+  .settings-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .settings-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Card Title */
+  .settings-card-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Card Description */
+  .settings-card-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Styling */
+  .settings-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(45deg, #ff1d58, #8458b3);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .settings-button:hover {
+    background: linear-gradient(45deg, #8458b3, #ff1d58);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .settings-card-container {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+      gap: 15px;
+    }
+  }
+  
+  /* Fade-In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

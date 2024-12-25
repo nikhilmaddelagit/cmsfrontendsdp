@@ -1,0 +1,52 @@
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-left: 280px; /* Adjust based on sidebar width */
+  padding: 2rem;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.dashboard-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dashboard-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dashboard-card .card-value {
+  font-size: 2rem;
+  color: #0077b5; /* Highlight color */
+  margin-top: 1rem;
+}
+
+.sidebar.collapsed + .main-content {
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

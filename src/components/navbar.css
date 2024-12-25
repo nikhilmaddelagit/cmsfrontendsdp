@@ -1,0 +1,131 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+}
+
+/* Navbar Styling */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #a0d2eb, #8458b3, #a28089);
+  padding: 20px 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar Hover Animation */
+nav:hover {
+  background: linear-gradient(45deg, #a0d2eb, #8458b3, #a28089);
+}
+
+/* Link Styling */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 20px;
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effects with Animation */
+nav a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease-in-out;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+nav a:hover {
+  color: orange;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Navbar Item Active/Focus State */
+nav a:focus, nav a:active {
+  color: #ff6f61;
+  outline: none;
+}
+
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 15px 25px;
+  }
+
+  nav a {
+    margin: 8px 0;
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+
+  /* Logo Adjustments for smaller screens */
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Adding a subtle page transition */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhancing Body Styling */
+body {
+  background: linear-gradient(120deg, #f0f4f8, #e0e7ff);
+}
+
+/* Footer Section */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* Footer Links */
+footer a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
