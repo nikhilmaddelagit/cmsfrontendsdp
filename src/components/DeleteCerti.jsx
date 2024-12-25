@@ -37,7 +37,7 @@ export default function DeleteCerti()
 
   const handleDeleteClick = async (id) => {
     try {
-        await axios.delete(`https://cmsbackendsdp-production.up.railway.app/`);
+        await axios.delete(`https://cmsbackendsdp-production.up.railway.app/certificate/deletecerti/${id}`);
         message.success('Certificate deleted successfully.');
         setCertificates(certificates.filter((cert) => cert.id !== id));
     } catch (error) {
