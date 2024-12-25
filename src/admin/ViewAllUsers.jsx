@@ -8,7 +8,7 @@ export default function ViewAllUsers() {
 
   useEffect(() => {
     axios
-      .get("https://cmsbackendsdp-production.up.railway.app/")
+      .get("https://cmsbackendsdp-production.up.railway.app/admin/viewallusers")
       .then((response) => {
         setUsers(response.data);
       })

@@ -14,7 +14,7 @@ export default function DeleteCerti()
   const fetchCertificates = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://cmsbackendsdp-production.up.railway.app/`);
+      const response = await axios.get(`https://cmsbackendsdp-production.up.railway.app/certificate/viewall/${user.id}`);
       setCertificates(response.data);
     } 
     catch (error) 

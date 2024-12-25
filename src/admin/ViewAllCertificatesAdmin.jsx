@@ -13,7 +13,7 @@ export default function ViewAllCertificatesAdmin() {
   const fetchCertificates = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://cmsbackendsdp-production.up.railway.app/");
+      const response = await axios.get("https://cmsbackendsdp-production.up.railway.app/admin/adminviewcerti");
       setCertificates(response.data);
     } catch (err) {
       setError(err.message);

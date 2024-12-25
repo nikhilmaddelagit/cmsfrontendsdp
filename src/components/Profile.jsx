@@ -13,7 +13,7 @@ export default function Profile()
     const fetchProfilePic = async () => {
       try 
       {
-        const response = await fetch(`https://cmsbackendsdp-production.up.railway.app/`);
+        const response = await fetch(`https://cmsbackendsdp-production.up.railway.app/user/profilepic/${user.id}`);
         if (response.ok) 
           {
           const blob = await response.blob();
