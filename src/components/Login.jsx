@@ -67,7 +67,6 @@ export default function Login() {
                 />
             </div>
 
-            {/* Form Section */}
             <div
                 style={{
                     flex: 1,

@@ -80,10 +80,6 @@ const styles = {
         textAlign: 'center',
         color: '#555',
     },
-    loginLink: {
-        textAlign: 'center',
-        marginTop: '15px',
-    },
 };
 
 export default function Registration() {
@@ -95,8 +91,9 @@ export default function Registration() {
         contact: '',
         profilePic: '',
     });
+    const [fileName, setFileName] = useState(''); 
     const [passwordStrength, setPasswordStrength] = useState('');
-    const [showPassword, setShowPassword] = useState(false); // State for password visibility toggle
+    const [showPassword, setShowPassword] = useState(false); 
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -107,14 +104,15 @@ export default function Registration() {
         }
     };
 
-    // Handle file input for profile picture
+
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
             setFormData({
                 ...formData,
-                profilePic: file
+                profilePic: file,
             });
+            setFileName(file.name);
         }
     };
 
@@ -133,7 +131,7 @@ export default function Registration() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Prepare FormData to send to the server (for the profile picture)
+
         const data = new FormData();
         data.append('name', formData.name);
         data.append('gender', formData.gender);
@@ -144,11 +142,14 @@ export default function Registration() {
             data.append('profilePic', formData.profilePic);
         }
 
-        try {
+        try 
+        {
             await axios.post('https://cmsbackendsdp-production.up.railway.app/user/register', data);
-            message.success("User Registered Successfully");
-        } catch (error) {
-            message.error("Error in registration");
+            message.success('User Registered Successfully');
+        } 
+        catch (error) 
+        {
+            message.error('Error in registration');
         }
     };
 
@@ -160,7 +161,7 @@ export default function Registration() {
         <div>
             <NavBar />
             <div style={styles.container}>
-                {/* Image Section */}
+
                 <div style={styles.imageContainer}>
                     <img
                         src="https://images.unsplash.com/photo-1658235081483-8f06aa0882cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -173,25 +174,24 @@ export default function Registration() {
                     />
                 </div>
 
-                {/* Form Section */}
+
                 <div style={styles.formContainer}>
                     <h2 style={styles.heading}>Registration Form</h2>
                     <form onSubmit={handleSubmit}>
                         <label>Enter Name</label>
                         <input
-                            type='text'
-                            id='name'
+                            type="text"
+                            id="name"
                             value={formData.name}
                             onChange={handleChange}
                             required
                             style={styles.inputField}
-                            placeholder='Enter Name'
+                            placeholder="Enter Name"
                         />
-                        
 
                         <label>Select Gender</label>
                         <select
-                            id='gender'
+                            id="gender"
                             onChange={handleChange}
                             required
                             style={styles.inputField}
@@ -204,32 +204,40 @@ export default function Registration() {
 
                         <label>Enter Email</label>
                         <input
-                            type='email'
-                            id='email'
+                            type="email"
+                            id="email"
                             value={formData.email}
                             onChange={handleChange}
                             required
                             style={styles.inputField}
-                            placeholder='Enter Email'
+                            placeholder="Enter Email"
                         />
 
                         <label>Enter Password</label>
                         <div className="password-container" style={{ position: 'relative' }}>
                             <input
                                 type={showPassword ? 'text' : 'password'}
-                                id='password'
+                                id="password"
                                 value={formData.password}
                                 onChange={handleChange}
                                 required
                                 style={styles.inputField}
-                                placeholder='Enter Password'
+                                placeholder="Enter Password"
                             />
                             <span style={styles.eyeIcon} onClick={togglePassword}>
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
                             </span>
                         </div>
-                        <p className={`password-strength ${passwordStrength.toLowerCase()}`} style={styles.passwordStrength}>{passwordStrength}</p>
-                        <p className="password-requirements" style={styles.passwordRequirements}>
+                        <p
+                            className={`password-strength ${passwordStrength.toLowerCase()}`}
+                            style={styles.passwordStrength}
+                        >
+                            {passwordStrength}
+                        </p>
+                        <p
+                            className="password-requirements"
+                            style={styles.passwordRequirements}
+                        >
                             Password must include:
                             <br />
                             • At least 8 characters<br />
@@ -241,29 +249,52 @@ export default function Registration() {
 
                         <label>Enter Contact</label>
                         <input
-                            type='number'
-                            id='contact'
+                            type="number"
+                            id="contact"
                             value={formData.contact}
                             onChange={handleChange}
                             required
                             style={styles.inputField}
-                            placeholder='Enter Contact'
+                            placeholder="Enter Contact"
                         />
 
-                        <label>Upload Profile Picture(Image)</label>
+                        <label>Upload Profile Picture (Image)</label>
                         <input
-                            type='file'
+                            type="file"
                             onChange={handleFileChange}
                             accept="image/*"
                             style={styles.inputField}
                         />
+                        {fileName && (
+                            <p
+                                style={{
+                                    fontSize: '14px',
+                                    color: '#555',
+                                    marginTop: '-10px',
+                                }}
+                            >
+                                Selected file: {fileName}
+                            </p>
+                        )}
 
                         <input type="submit" value="Register" style={styles.submitBtn} />
                         <input type="reset" value="Reset" style={styles.resetBtn} />
                     </form>
 
-                    <p style={{ color: 'black', textAlign: 'center', marginTop: '15px' }}>
-                        Already have an account? <Link to="/login" style={{ color: 'black', textDecoration: 'underline' }}>Login here</Link>
+                    <p
+                        style={{
+                            color: 'black',
+                            textAlign: 'center',
+                            marginTop: '15px',
+                        }}
+                    >
+                        Already have an account?{' '}
+                        <Link
+                            to="/login"
+                            style={{ color: 'black', textDecoration: 'underline' }}
+                        >
+                            Login here
+                        </Link>
                     </p>
                 </div>
             </div>
